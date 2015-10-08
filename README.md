@@ -10,14 +10,14 @@ Example/recommended server setup [here](./example/server.js).
 Install devmtn-auth:
 
 - Ask a mentor to get a copy of the devmtn-auth module.
-- Unzip it and place the devmtn-auth folder in the root of your project.
+- Unzip the devmtn-auth-master folder into the root of your project.
 - To install the module and its dependencies:
     - the trailing slash tells npm to install install from a folder, rather than the npm registry
 
 ```
-    npm install devmtn-auth/
+    npm install devmtn-auth-master/
 ```
-- When devmtn-auth is installed into your node_modules, you can safely remove the devmtn-auth folder from your project's root directory.
+- When devmtn-auth is installed into your node_modules, you can safely remove the devmtn-auth-master folder from your project's root directory.
 
 The example has what is basically a [Minimum Setup](./example/server.js).
 
