@@ -1,7 +1,7 @@
 {
   "name": "devmtn-auth",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Module to authenticate with devmounta.in using json web tokens",
   "main": "./lib",
   "directories": {
