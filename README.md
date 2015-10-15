@@ -17,7 +17,15 @@ Install devmtn-auth:
 ```
     npm install devmtn-auth-master/
 ```
-- When devmtn-auth is installed into your node_modules, you can safely remove the devmtn-auth-master folder from your project's root directory.
+To make devmtn-auth install with everything else when you run npm install:
+
+```javascript
+//Add to package.json
+
+"scripts": {
+    "preinstall" : "npm install devmtn-auth-master/"
+    }
+```
 
 The example has what is basically a [Minimum Setup](./example/server.js).
 
