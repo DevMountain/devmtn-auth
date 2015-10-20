@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/devmtn-auth.test.js",
     "start": "node server.js"
   },
   "author": "Jason Dawson",
@@ -17,5 +17,9 @@
     "jsonwebtoken": "^5.0.5",
     "oauth": "^0.9.14",
     "passport-strategy": "^1.0.0"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.3.3"
   }
 }
