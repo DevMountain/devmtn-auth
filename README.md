@@ -62,3 +62,10 @@ For convenience, devmtn-auth exposes a checkRoles function that can be used to v
     var Devmtn = require('devmtn-auth');
     Devmtn.checkRoles(req.user, 'student') // returns boolean
 ```
+
+Running Tests
+----
+
+```
+npm test
+```
