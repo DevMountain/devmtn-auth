@@ -43,8 +43,9 @@ passport.deserializeUser(function(id, done) {
 
 })
 
-passport.use('devmtn', new DevmtnStrategy(devmtnAuthConfig, function(user, done) {
+passport.use('devmtn', new DevmtnStrategy(devmtnAuthConfig, function(jwtoken, user, done) {
   // Find or create a user in your database here and return your user.
+  // json web token is also provided here as jwtoken and could be added to the session for use on API calls to devmounta.in
 
   User.findOrCreate({email: user.email}, function(err, local_user) {
     return done(err, local_user)
@@ -65,7 +66,7 @@ app.get('/auth/devmtn/callback', passport.authenticate('devmtn', {failureRedirec
   function(req, res) {
     //successful authentication
 
-    console.log(req.user);
+    console.log(req.user); // req.user is created by passport from the decoded json web token
     console.log('user roles:', req.user.roles);
     console.log('student:', Devmtn.checkRoles(req.user, 'student')) //example of checking user roles
 
@@ -74,7 +75,7 @@ app.get('/auth/devmtn/callback', passport.authenticate('devmtn', {failureRedirec
 
 app.get('/auth/devmtn/logout', function(req, res) {
   req.logout();
-  console.log(req.user);
+  console.log(req.user); //just showing req.user is undefined after logout
   res.redirect('/#/')
 })
 
