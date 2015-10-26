@@ -56,6 +56,20 @@ However, for this to work, your app must be configured on the authentication ser
 
 ----
 
+The token can be accessed in the verify callback when you set up the strategy
+
+```javascript
+    passport.use('devmtn', new DevmtnStrategy(devmtnAuthConfig, function(jwtoken, user, done) {
+        //could attach the token to the session for use against devmtn APIs
+        req.session.jwtoken = jwtoken;
+        User.findOrCreate({email: user.email}, function(err, local_user) {
+            return done(err, local_user)
+        })
+    }))
+```
+
+----
+
 For convenience, devmtn-auth exposes a checkRoles function that can be used to verify user roles from the decoded json web token.
 ```javascript
     //Example
