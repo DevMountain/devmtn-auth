@@ -7,8 +7,8 @@ describe('Devmtn.checkRoles', function () {
     email: 'test@test.com'
   , id: 5
   , roles: [{
-    , role: 'tester'
-      id: 1
+      role: 'tester'
+    , id: 1
     }, {
       role: 'clockmaker'
     , id: 3
