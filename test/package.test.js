@@ -1,6 +1,6 @@
 var strategy = require('..')
-var chai = require('chai')
-var expect = chai.expect
+  , chai     = require('chai')
+  , expect   = chai.expect
 
 describe('Module: devmtn-auth', function () {
   it('should export Strategy constructor directly from package', function () {
@@ -13,3 +13,4 @@ describe('Module: devmtn-auth', function () {
   })
 
 })
+

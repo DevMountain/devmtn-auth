@@ -1,19 +1,21 @@
-var chai = require('chai')
-var expect = chai.expect
-var sinon = require('sinon')
-var sinonChai = require('sinon-chai')
-var passport = require('chai-passport-strategy')
+var chai           = require('chai')
+  , expect         = chai.expect
+  , sinon          = require('sinon')
+  , sinonChai      = require('sinon-chai')
+  , passport       = require('chai-passport-strategy')
+  , Devmtn         = require('../lib/index.js')
+  , DevmtnStrategy = Devmtn.Strategy
+
 chai.use(sinonChai)
 chai.use(passport)
-var Devmtn = require('../lib/index.js')
-var DevmtnStrategy = Devmtn.Strategy
 
 describe('DevmtnStrategy', function () {
+
   var strategy = new DevmtnStrategy({
-    app: 'test',
-    client_token: '123',
-    callbackURL: 'http://localhost:8034/auth/devmtn/callback',
-    jwtSecret: '456'
+    app: 'test'
+  , client_token: '123'
+  , callbackURL: 'http://localhost:8034/auth/devmtn/callback'
+  , jwtSecret: '456'
   }, function (jwtoken, user, done) {})
 
   it('should be named devmtn', function () {
@@ -23,10 +25,10 @@ describe('DevmtnStrategy', function () {
   it('should throw if constructed without a verify callback', function () {
     expect(function () {
       new DevmtnStrategy({
-        app: 'test',
-        client_token: '123',
-        callbackURL: 'http://localhost:8034/auth/devmtn/callback',
-        jwtSecret: '456'
+        app: 'test'
+      , client_token: '123'
+      , callbackURL: 'http://localhost:8034/auth/devmtn/callback'
+      , jwtSecret: '456'
       })
     }).to.throw(TypeError, 'DevmtnStrategy requires a verify callback')
   })
@@ -34,9 +36,9 @@ describe('DevmtnStrategy', function () {
   it('should throw if constructed without an app credential', function () {
     expect(function () {
       new DevmtnStrategy({
-        client_token: '123',
-        callbackURL: 'http://localhost:8034/auth/devmtn/callback',
-        jwtSecret: '456'
+        client_token: '123'
+      , callbackURL: 'http://localhost:8034/auth/devmtn/callback'
+      , jwtSecret: '456'
       }, function () {})
     }).to.throw(TypeError, 'DevmtnStrategy requires an app credential')
   })
@@ -44,9 +46,9 @@ describe('DevmtnStrategy', function () {
   it('should throw if constructed without a client_token credential', function () {
     expect(function () {
       new DevmtnStrategy({
-        app: 'test',
-        callbackURL: 'http://localhost:8034/auth/devmtn/callback',
-        jwtSecret: '456'
+        app: 'test'
+      , callbackURL: 'http://localhost:8034/auth/devmtn/callback'
+      , jwtSecret: '456'
       }, function () {})
     }).to.throw(TypeError, 'DevmtnStrategy requires a client_token credential')
   })
@@ -54,9 +56,9 @@ describe('DevmtnStrategy', function () {
   it('should throw if constructed without a callbackURL', function () {
     expect(function () {
       new DevmtnStrategy({
-        app: 'test',
-        client_token: '123',
-        jwtSecret: '456'
+        app: 'test'
+      , client_token: '123'
+      , jwtSecret: '456'
       }, function () {})
     }).to.throw(TypeError, 'DevmtnStrategy requires a callbackURL')
   })
@@ -64,9 +66,9 @@ describe('DevmtnStrategy', function () {
   it('should throw if constructed without a jwtSecret', function () {
     expect(function () {
       new DevmtnStrategy({
-        app: 'test',
-        client_token: '123',
-        callbackURL: 'http://localhost:8034/auth/devmtn/callback'
+        app: 'test'
+      , client_token: '123'
+      , callbackURL: 'http://localhost:8034/auth/devmtn/callback'
       }, function () {})
     }).to.throw(TypeError, 'DevmtnStrategy requires a jwtSecret')
   })
@@ -80,10 +82,10 @@ describe('DevmtnStrategy', function () {
   describe('authenticate', function () {
     var jwtoken, testStrategy
     var options = {
-      app: 'test',
-      client_token: '123',
-      callbackURL: 'http://localhost:8034/auth/devmtn/callback',
-      jwtSecret: '456'
+      app: 'test'
+    , client_token: '123'
+    , callbackURL: 'http://localhost:8034/auth/devmtn/callback'
+    , jwtSecret: '456'
     }
     beforeEach(function () {
       testStrategy = new DevmtnStrategy(options, function (jwtoken, user, done) {
@@ -170,8 +172,10 @@ describe('DevmtnStrategy', function () {
         expect(info).to.not.be.undefined
         expect(info.message).to.equal('YOU SHALL NOT PASS!')
       })
+
     })
 
   })
 
 })
+

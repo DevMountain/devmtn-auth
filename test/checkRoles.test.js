@@ -1,17 +1,17 @@
-var chai = require('chai')
-var expect = chai.expect
-var Devmtn = require('../lib/index.js')
+var chai   = require('chai')
+  , expect = chai.expect
+  , Devmtn = require('../lib/index.js')
 
 describe('Devmtn.checkRoles', function () {
   var user = {
-    email: 'test@test.com',
-    id: 5,
-    roles: [{
-      role: 'tester',
+    email: 'test@test.com'
+  , id: 5
+  , roles: [{
+    , role: 'tester'
       id: 1
     }, {
-      role: 'clockmaker',
-      id: 3
+      role: 'clockmaker'
+    , id: 3
     }]
   }
 
@@ -22,5 +22,5 @@ describe('Devmtn.checkRoles', function () {
   it('should return false if role does not exist', function () {
     expect(Devmtn.checkRoles(user, 'admin')).to.equal(false)
   })
-
 })
+
