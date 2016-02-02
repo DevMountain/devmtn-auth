@@ -1,9 +1,8 @@
-var chai = require('chai');
-var expect = chai.expect;
-var Devmtn = require('../lib/index.js');
+var chai = require('chai')
+var expect = chai.expect
+var Devmtn = require('../lib/index.js')
 
-describe('Devmtn.checkRoles', function() {
-
+describe('Devmtn.checkRoles', function () {
   var user = {
     email: 'test@test.com',
     id: 5,
@@ -16,13 +15,12 @@ describe('Devmtn.checkRoles', function() {
     }]
   }
 
-  it('should return true if role exists', function() {
-    expect(Devmtn.checkRoles(user, 'tester')).to.equal(true);
+  it('should return true if role exists', function () {
+    expect(Devmtn.checkRoles(user, 'tester')).to.equal(true)
   })
 
-  it('should return false if role does not exist', function() {
-    expect(Devmtn.checkRoles(user, 'admin')).to.equal(false);
+  it('should return false if role does not exist', function () {
+    expect(Devmtn.checkRoles(user, 'admin')).to.equal(false)
   })
-
 
 })
