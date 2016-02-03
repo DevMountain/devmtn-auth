@@ -1,5 +1,5 @@
 {
-  "name": "DevMountain-Auth",
+  "name": "devmtn-auth",
   "private": false,
   "version": "0.1.5",
   "description": "Module to authenticate with devmounta.in using json web tokens",
