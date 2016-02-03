@@ -1,15 +1,14 @@
 {
   "name": "devmtn-auth",
-  "private": false,
-  "version": "0.1.5",
-  "description": "Module to authenticate with devmounta.in using json web tokens",
+  "version": "0.2.0",
+  "description": "devmounta.in authentication module using json web tokens",
   "main": "./lib",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha -w",
-    "start": "node server.js"
+    "start": "node server"
   },
   "author": "Jason Dawson",
   "dependencies": {
