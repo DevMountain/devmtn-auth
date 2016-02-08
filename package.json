@@ -21,6 +21,10 @@
       "url": "http://zacanger.com"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacanger/devmtn-auth/tree/npm-packaging"
+  },
   "dependencies": {
     "inherits": "^2.0.1",
     "jsonwebtoken": "^5.0.5",
