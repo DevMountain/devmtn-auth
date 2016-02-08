@@ -1,4 +1,5 @@
-# DevMountain Auth with Passport & JSON Web Tokens
+# DevMountain Auth
+## With Passport & JSON Web Tokens
 
 This module is a Passport strategy to allow for DevMountain microservice authentication with
 relatively little configuration. You get all the normal benefits of Passport, including auth
