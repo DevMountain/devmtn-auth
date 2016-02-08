@@ -14,10 +14,11 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(session({
-  secret: 'thisisasecret',
-  resave: true,
-  saveUninitialized: false
+  secret: 'thisisasecret'
+, resave: true
+, saveUninitialized: false
 }))
+
 app.use(express.static(__dirname + '/public'))
 
 // passport setup
@@ -25,7 +26,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 passport.serializeUser(function (user, done) {
-// This should match your data (e.g. would be user._id for mongo/mongoose)
+// This should match your data (e.g. user._id for mongo/mongoose)
   done(null, user.id)
 })
 
@@ -47,7 +48,6 @@ passport.use('devmtn', new DevmtnStrategy(devmtnAuthConfig, function (jwtoken, u
   })
 }))
 
-
 // auth endpoints
 app.get('/auth/devmtn', passport.authenticate('devmtn'), function (req, res) {
 // redirects, so this doesn't get called
@@ -68,7 +68,6 @@ app.get('/auth/devmtn/logout', function (req, res) {
   console.log(req.user) // showing req.user is undefined after logout
   res.redirect('/#/')
 })
-
 
 // Start server
 app.listen(port, function () {
