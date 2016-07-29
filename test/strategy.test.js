@@ -111,7 +111,7 @@ describe('DevmtnStrategy', function () {
 
       it('should be redirected', function () {
         var encodedCallback = encodeURIComponent('http://localhost:8034/auth/devmtn/callback')
-        var expected = 'https://devmounta.in/login?bounce=test&redirect_uri=' + encodedCallback + '&client_id=123'
+        var expected = 'https://devmountain.com/login?bounce=test&redirect_uri=' + encodedCallback + '&client_id=123'
         expect(url).to.equal(expected)
       })
     })

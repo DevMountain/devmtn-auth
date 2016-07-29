@@ -1,7 +1,7 @@
 {
   "name": "devmtn-auth",
   "version": "0.2.2",
-  "description": "devmounta.in authentication module using json web tokens",
+  "description": "devmountain.com authentication module using json web tokens",
   "main": "./lib",
   "directories": {
     "lib": "./lib",

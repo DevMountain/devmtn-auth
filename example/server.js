@@ -42,7 +42,7 @@ passport.deserializeUser(function (id, done) {
 passport.use('devmtn', new DevmtnStrategy(devmtnAuthConfig, function (jwtoken, user, done) {
 // Find or create a user in your database here, and return your user.
 // json web token is also provided here, as jwtoken, and could be added to
-// the session for use on API calls to devmounta.in.
+// the session for use on API calls to devmountain.com.
   User.findOrCreate({email: user.email}, function (err, local_user) {
     return done(err, local_user)
   })
