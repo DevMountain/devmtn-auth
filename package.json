@@ -1,29 +1,21 @@
 {
   "name": "devmtn-auth",
-  "version": "0.2.2",
   "description": "devmountain.com authentication module using json web tokens",
-  "main": "./lib",
-  "directories": {
-    "lib": "./lib",
-    "example": "./example"
-  },
-  "scripts": {
-    "test": "mocha -w",
-    "start": "npm run test"
-  },
-  "author": {
-    "name": "Jason Dawson",
-    "url": "https://github.com/jasondawson"
-  },
+  "version": "0.2.3",
+  "author": "Jason Dawson",
   "contributors": [
-    {
-      "name": "Zac Anger",
-      "url": "http://zacanger.com"
-    }
+    "Zac Anger (http://zacanger.com)",
+    "Brack Carmony",
+    "Brian Kemper"
   ],
+  "main": "./lib",
+  "scripts": {
+    "start": "npm run test",
+    "test": "mocha -w"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zacanger/devmtn-auth/tree/npm-packaging"
+    "url": "git@github.com:DevMountain/devmtn-auth.git"
   },
   "dependencies": {
     "inherits": "^2.0.1",
@@ -39,5 +31,9 @@
     "passport": "^0.3.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
+  },
+  "directories": {
+    "lib": "./lib",
+    "example": "./example"
   }
 }
