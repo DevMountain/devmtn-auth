@@ -18,6 +18,7 @@
     "url": "git@github.com:DevMountain/devmtn-auth.git"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "inherits": "^2.0.1",
     "jsonwebtoken": "^5.0.5",
     "oauth": "^0.9.14",
