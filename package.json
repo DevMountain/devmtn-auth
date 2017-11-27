@@ -1,7 +1,7 @@
 {
   "name": "devmtn-auth",
   "description": "devmountain.com authentication module using json web tokens",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "author": "Jason Dawson",
   "contributors": [
     "Zac Anger (http://zacanger.com)",
