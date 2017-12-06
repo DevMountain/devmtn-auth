@@ -49,3 +49,14 @@ roles from the decoded JSON web token.
     Devmtn.checkRoles(req.user, 'student')
     // returns bool
 
+--------
+
+devmtn-auth also has an optional 'clearJwtAuthCookie' middleware function to clear the auth cookie that is used
+for SSO.  
+
+    var Devmtn = require('devmtn-auth')
+
+    app.get('/logout', Devmtn.clearJwtAuthCookie, (req, res, next) => {
+      req.logout();
+      res.redirect('/');
+    })
