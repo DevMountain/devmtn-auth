@@ -1,3 +1,8 @@
+# DEPRECATED
+This authentication service should be considered deprecated. Existing applications will continue to work, all new applications should utilize the DevMountain Single-Sign-On Service.
+
+Contact a member of the development team for details.
+
 # DevMountain Auth
 ## With Passport & JSON Web Tokens
 
@@ -52,7 +57,7 @@ roles from the decoded JSON web token.
 --------
 
 devmtn-auth also has an optional 'clearJwtAuthCookie' middleware function to clear the auth cookie that is used
-for SSO.  
+for SSO.
 
     var Devmtn = require('devmtn-auth')
 
